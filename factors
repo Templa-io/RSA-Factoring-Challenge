@@ -1,17 +1,5 @@
-import sys
+#!/usr/bin/env bash
+# Factorize as many numbers as possible into a product of two smaller numbers.
 
-def factorize(n);
-    for i in range(2, int(n ** 0.5) + 1):
-        if n % i == 0:
-            return (i, n // i)
-
-def main ():
-    filename = sys.argv[1]
-    with open(filename, 'r') as f:
-        for line in f:
-            n = int(line.strip())
-            p, q = factorize(n)
-            print(f"{n}={p}*{q}")
-
-if __name__ == '__main__':
-    main()
+gcc factors.c -o a
+./a $1
